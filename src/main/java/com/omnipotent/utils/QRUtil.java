@@ -14,12 +14,12 @@ import com.google.zxing.common.BitMatrix;
  * @date 2016年4月18日 下午6:37:38
  * @since 1.0.0
  */
-public final class MatrixToImageWriter {
+public final class QRUtil {
 
 	private static final int BLACK = 0xFF000000;
 	private static final int WHITE = 0xFFFFFFFF;
 
-	private MatrixToImageWriter() {
+	private QRUtil() {
 		
 	}
 

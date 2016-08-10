@@ -16,7 +16,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
-import com.omnipotent.utils.MatrixToImageWriter;
+import com.omnipotent.utils.QRUtil;
 import com.omnipotent.utils.StringUtil;
 
 /**
@@ -53,7 +53,7 @@ public class QRCode extends HttpServlet {
 				
 				// 生成二维码图片，输出到页面
 				OutputStream stream = response.getOutputStream();
-				MatrixToImageWriter.writeToStream(bitMatrix, format, stream);
+				QRUtil.writeToStream(bitMatrix, format, stream);
 			}
 		} catch (Exception e) {
 			// logger.error("生成二维码时发生异常：", e);
@@ -75,7 +75,7 @@ public class QRCode extends HttpServlet {
 		// 生成二维码
 		System.out.println("File.separator = " + File.separator);
 		File outputFile = new File("d:" + File.separator + "new.jpg");
-		MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);
+		QRUtil.writeToFile(bitMatrix, format, outputFile);
 	}
 
 }
